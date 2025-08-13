@@ -1,0 +1,23 @@
+{
+  "name": "bigcommerce-oauth",
+  "version": "0.0.1",
+  "description": "Framework-agnostic OAuth utilities for BigCommerce apps",
+  "main": "dist/index.cjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "packageManager": "pnpm@10.13.1",
+  "type": "module",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": "false",
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

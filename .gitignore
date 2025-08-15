@@ -47,6 +47,7 @@ coverage/
 *.iml
 .DS_Store
 Thumbs.db
+*.code-workspace
 
 # ----------------------------
 # Logs & temporary files

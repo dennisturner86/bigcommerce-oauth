@@ -1,7 +1,7 @@
 import js from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import importPlugin from 'eslint-plugin-import';
 import eslintConfigPrettier from 'eslint-config-prettier';
+import importPlugin from 'eslint-plugin-import';
+import tseslint from 'typescript-eslint';
 
 export default [
   // 0) Ignore generated & config files
@@ -15,11 +15,18 @@ export default [
 
   // 3) Type-aware rules – ONLY for .ts files
   {
-    files: ['**/*.ts'],
+    files: ['src/**/*.ts'],
     languageOptions: {
       parserOptions: {
         project: ['./tsconfig.json'],
         tsconfigRootDir: import.meta.dirname,
+      },
+    },
+    plugins: { import: importPlugin },
+    settings: {
+      'import/resolver': {
+        typescript: true,
+        node: true,
       },
     },
     rules: {
@@ -30,25 +37,25 @@ export default [
       '@typescript-eslint/no-unsafe-assignment': 'warn',
       '@typescript-eslint/no-unsafe-member-access': 'warn',
       '@typescript-eslint/no-unsafe-call': 'warn',
-    },
-  },
+      'import/no-relative-parent-imports': 'off',
 
-  // 4) Import hygiene — scoped to TS and with resolvers
-  {
-    files: ['**/*.ts'],
-    plugins: { import: importPlugin },
-    settings: {
-      'import/resolver': {
-        typescript: true,
-        node: true,
-      },
-    },
-    rules: {
-      '@typescript-eslint/consistent-type-imports': 'error',
+      // Ban only parent‑relative paths; let aliases like "@/..." pass
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['../*', '../**'],
+              message: 'Use "@/…" alias instead of parent-relative import',
+            },
+          ],
+        },
+      ],
       'import/first': 'error',
       'import/no-duplicates': 'error',
       'import/newline-after-import': 'warn',
       'import/no-unresolved': 'off',
+      'import/no-relative-parent-imports': 'error',
     },
   },
 

@@ -27,6 +27,7 @@ export default [
     },
 
     rules: {
+      '@typescript-eslint/consistent-type-imports': 'error',
       'import/first': 'error',
       'import/newline-after-import': 'error',
       'import/no-relative-parent-imports': 'error',

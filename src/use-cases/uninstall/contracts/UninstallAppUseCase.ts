@@ -1,0 +1,30 @@
+import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims';
+import type { UninstallAppInput } from '@/use-cases/uninstall/dto/UninstallAppInput';
+
+/**
+ * Use case contract for handling the BigCommerce **app uninstall** callback.
+ *
+ * Responsibilities of implementations:
+ * - Verify the `signed_payload_jwt` (authenticity + lifetime).
+ * - Decode and return the full {@link SignedPayloadClaims} for downstream use.
+ *
+ * Notes:
+ * - This interface performs **no persistence or side-effects** by itself.
+ *   Decorators (e.g., `DeactivateStore`) should wrap an implementation to apply
+ *   domain actions (mark store inactive, notify, telemetry, etc.).
+ *
+ * @see https://developer.bigcommerce.com/docs/integrations/apps/guide/callbacks
+ */
+export interface UninstallAppUseCase {
+  /**
+   * Verify and decode the uninstall callback’s `signed_payload_jwt`.
+   *
+   * @param input - Transport-agnostic DTO containing the raw JWT sent by BigCommerce.
+   * @returns A promise that resolves to the verified and decoded {@link SignedPayloadClaims}.
+   *
+   * @throws {MalformedJwtError} If the token is not a three-part JWT.
+   * @throws {InvalidJwtSignatureError} If the HMAC-SHA256 signature does not match.
+   * @throws {JwtLifetimeError} If the token is expired or not yet valid (`nbf…exp` window).
+   */
+  execute(input: UninstallAppInput): Promise<SignedPayloadClaims>;
+}

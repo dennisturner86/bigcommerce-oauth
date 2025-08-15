@@ -15,6 +15,6 @@ export class BigCommerceTokenExchangeError extends Error {
     public readonly status: number,
     public readonly statusText: string,
   ) {
-    super(`BigCommerce token exchange failed: ${status} ${statusText}`);
+    super(`BigCommerce token exchange failed: ${status.toString()} ${statusText}`);
   }
 }

@@ -33,6 +33,6 @@ export class LoadApp implements LoadAppUseCase {
    * @throws {JwtLifetimeError} If current time is outside `nbf…exp`.
    */
   public async execute(input: LoadAppInput): Promise<SignedPayloadClaims> {
-    return this.verifier.verify(input.signedPayloadJwt);
+    return Promise.resolve(this.verifier.verify(input.signedPayloadJwt));
   }
 }

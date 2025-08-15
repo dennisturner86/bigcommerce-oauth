@@ -33,7 +33,6 @@ export class UninstallApp implements UninstallAppUseCase {
    * @throws {JwtLifetimeError} If current time is outside `nbf…exp`.
    */
   public async execute(input: UninstallAppInput): Promise<SignedPayloadClaims> {
-    // `verify` is synchronous; returning within `async` still fulfills the Promise signature.
-    return this.verifier.verify(input.signedPayloadJwt);
+    return Promise.resolve(this.verifier.verify(input.signedPayloadJwt));
   }
 }

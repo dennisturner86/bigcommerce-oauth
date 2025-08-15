@@ -33,6 +33,6 @@ export class RemoveUser implements RemoveUserUseCase {
    * @throws {JwtLifetimeError} If current time is outside `nbf…exp`.
    */
   public async execute(input: RemoveUserInput): Promise<SignedPayloadClaims> {
-    return this.verifier.verify(input.signedPayloadJwt);
+    return Promise.resolve(this.verifier.verify(input.signedPayloadJwt));
   }
 }

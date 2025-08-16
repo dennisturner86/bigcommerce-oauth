@@ -34,6 +34,46 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
+    "./entities": {
+      "types": "./dist/entities/index.d.ts",
+      "import": "./dist/entities/index.js",
+      "require": "./dist/entities/index.cjs"
+    },
+    "./gateways/bigcommerce": {
+      "types": "./dist/gateways/BigCommerce/index.d.ts",
+      "import": "./dist/gateways/BigCommerce/index.js",
+      "require": "./dist/gateways/BigCommerce/index.cjs"
+    },
+    "./use-cases/install": {
+      "types": "./dist/use-cases/install/index.d.ts",
+      "import": "./dist/use-cases/install/index.js",
+      "require": "./dist/use-cases/install/index.cjs"
+    },
+    "./use-cases/load": {
+      "types": "./dist/use-cases/load/index.d.ts",
+      "import": "./dist/use-cases/load/index.js",
+      "require": "./dist/use-cases/load/index.cjs"
+    },
+    "./use-cases/uninstall": {
+      "types": "./dist/use-cases/uninstall/index.d.ts",
+      "import": "./dist/use-cases/uninstall/index.js",
+      "require": "./dist/use-cases/uninstall/index.cjs"
+    },
+    "./use-cases/remove-user": {
+      "types": "./dist/use-cases/remove-user/index.d.ts",
+      "import": "./dist/use-cases/remove-user/index.js",
+      "require": "./dist/use-cases/remove-user/index.cjs"
+    },
+    "./use-cases/shared": {
+      "types": "./dist/use-cases/shared/index.d.ts",
+      "import": "./dist/use-cases/shared/index.js",
+      "require": "./dist/use-cases/shared/index.cjs"
+    },
+    "./value-objects": {
+      "types": "./dist/use-cases/value-objects/index.d.ts",
+      "import": "./dist/use-cases/value-objects/index.js",
+      "require": "./dist/use-cases/value-objects/index.cjs"
+    },
     "./package.json": "./package.json"
   },
   "devDependencies": {

@@ -3,13 +3,24 @@ import { defineConfig } from 'tsup';
 import tsconfig from './tsconfig.json' assert { type: 'json' };
 
 export default defineConfig({
-  entry: ['src/index.ts'],
+  entry: [
+    'src/index.ts',
+    'src/entities/index.ts',
+    'src/gateways/BigCommerce/index.ts',
+    'src/use-cases/install/index.ts',
+    'src/use-cases/load/index.ts',
+    'src/use-cases/uninstall/index.ts',
+    'src/use-cases/remove-user/index.ts',
+    'src/use-cases/shared/index.ts',
+    'src/use-cases/value-objects/index.ts',
+  ],
+  bundle: false,
   dts: true,
   sourcemap: true,
   clean: true,
   format: ['esm', 'cjs'],
   outDir: 'dist',
-  target: 'es2020',
+  target: 'node18',
   treeshake: true,
   minify: false,
   esbuildPlugins: [

@@ -1,6 +1,6 @@
-import type { OAuthClient } from '@/use-cases/install/contracts/OAuthClient';
-import type { AuthSession } from '@/use-cases/shared/dto/AuthSession';
-import { BigCommerceTokenExchangeError } from './errors/BigCommerceTokenExchangeError';
+import type { OAuthClient } from '@/use-cases/install/contracts/OAuthClient.js';
+import type { AuthSession } from '@/use-cases/shared/dto/AuthSession.js';
+import { BigCommerceTokenExchangeError } from './errors/BigCommerceTokenExchangeError.js';
 
 /**
  * Gateway: **BigCommerceOAuthClient**

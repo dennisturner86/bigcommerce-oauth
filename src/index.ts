@@ -1,4 +1,3 @@
-export * from './entities';
 export * from './gateways/BigCommerce';
 
 export * from './use-cases/install';

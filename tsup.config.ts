@@ -5,7 +5,6 @@ import tsconfig from './tsconfig.json' assert { type: 'json' };
 export default defineConfig({
   entry: [
     'src/index.ts',
-    'src/entities/index.ts',
     'src/gateways/BigCommerce/index.ts',
     'src/use-cases/install/index.ts',
     'src/use-cases/load/index.ts',

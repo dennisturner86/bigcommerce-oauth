@@ -1,7 +1,7 @@
-import type { SignedPayloadVerifier } from '@/use-cases/shared/contracts/SignedPayloadVerifier';
-import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims';
-import type { RemoveUserUseCase } from './contracts/RemoveUserUseCase';
-import type { RemoveUserInput } from './dto/RemoveUserInput';
+import type { SignedPayloadVerifier } from '@/use-cases/shared/contracts/SignedPayloadVerifier.js';
+import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims.js';
+import type { RemoveUserUseCase } from './contracts/RemoveUserUseCase.js';
+import type { RemoveUserInput } from './dto/RemoveUserInput.js';
 
 /**
  * **RemoveUser** — base implementation of {@link RemoveUserUseCase}.

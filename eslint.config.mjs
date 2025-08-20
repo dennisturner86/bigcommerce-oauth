@@ -17,7 +17,7 @@ export default [
     ...importPlugin.flatConfigs.recommended,
     ...importPlugin.flatConfigs.typescript,
 
-    files: ['src/**/*.ts'],
+    files: ['src/**/*.ts', 'tests/**/*.ts'],
 
     languageOptions: {
       parserOptions: {

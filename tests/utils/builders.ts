@@ -1,5 +1,5 @@
+import type { AuthSession } from '@/use-cases/shared/dto/AuthSession.js';
 import { randomUUID } from 'crypto';
-import type { AuthSession } from '@/use-cases/shared/dto/AuthSession';
 
 export function buildAuthSession(partial: Partial<AuthSession> = {}): AuthSession {
   return {

@@ -1,9 +1,9 @@
-import type { SignedPayloadVerifier } from '@/use-cases/shared/contracts/SignedPayloadVerifier';
-import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims';
+import type { SignedPayloadVerifier } from '@/use-cases/shared/contracts/SignedPayloadVerifier.js';
+import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims.js';
 import { createHmac } from 'crypto';
-import { InvalidJwtSignatureError } from './errors/InvalidJwtSignatureError';
-import { JwtLifetimeError } from './errors/JwtLifetimeError';
-import { MalformedJwtError } from './errors/MalformedJwtError';
+import { InvalidJwtSignatureError } from './errors/InvalidJwtSignatureError.js';
+import { JwtLifetimeError } from './errors/JwtLifetimeError.js';
+import { MalformedJwtError } from './errors/MalformedJwtError.js';
 
 /**
  * Verifies **BigCommerce** `signed_payload_jwt` tokens using the app’s *client-secret*.

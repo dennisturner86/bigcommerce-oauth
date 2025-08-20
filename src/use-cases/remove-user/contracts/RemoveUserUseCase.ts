@@ -1,5 +1,5 @@
-import type { RemoveUserInput } from '@/use-cases/remove-user/dto/RemoveUserInput';
-import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims';
+import type { RemoveUserInput } from '@/use-cases/remove-user/dto/RemoveUserInput.js';
+import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims.js';
 
 /**
  * Use case contract for handling the BigCommerce **remove user** callback.

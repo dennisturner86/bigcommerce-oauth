@@ -1,5 +1,5 @@
-import type { InstallAppInput } from '@/use-cases/install/dto/InstallAppInput';
-import type { AuthSession } from '@/use-cases/shared/dto/AuthSession';
+import type { InstallAppInput } from '@/use-cases/install/dto/InstallAppInput.js';
+import type { AuthSession } from '@/use-cases/shared/dto/AuthSession.js';
 
 /**
  * Use case contract for handling the BigCommerce **install (OAuth callback)** flow.

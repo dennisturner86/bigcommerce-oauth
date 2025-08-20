@@ -1,7 +1,7 @@
-import type { AuthSession } from '@/use-cases/shared/dto/AuthSession';
-import type { InstallAppUseCase } from './contracts/InstallAppUseCase';
-import type { OAuthClient } from './contracts/OAuthClient';
-import type { InstallAppInput } from './dto/InstallAppInput';
+import type { AuthSession } from '@/use-cases/shared/dto/AuthSession.js';
+import type { InstallAppUseCase } from './contracts/InstallAppUseCase.js';
+import type { OAuthClient } from './contracts/OAuthClient.js';
+import type { InstallAppInput } from './dto/InstallAppInput.js';
 
 /**
  * **InstallApp** — base implementation of {@link InstallAppUseCase}.

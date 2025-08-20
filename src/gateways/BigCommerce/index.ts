@@ -1,8 +1,8 @@
-export * from './BigCommerceOAuthClient';
+export * from './BigCommerceOAuthClient.js';
 
-export * from './BigCommerceSignedPayloadVerifier';
+export * from './BigCommerceSignedPayloadVerifier.js';
 
-export * from './errors/BigCommerceTokenExchangeError';
-export * from './errors/InvalidJwtSignatureError';
-export * from './errors/JwtLifetimeError';
-export * from './errors/MalformedJwtError';
+export * from './errors/BigCommerceTokenExchangeError.js';
+export * from './errors/InvalidJwtSignatureError.js';
+export * from './errors/JwtLifetimeError.js';
+export * from './errors/MalformedJwtError.js';

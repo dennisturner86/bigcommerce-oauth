@@ -1,6 +1,6 @@
 import { createMatchPath } from 'tsconfig-paths';
 import { defineConfig } from 'tsup';
-import tsconfig from './tsconfig.json' assert { type: 'json' };
+import tsconfig from './tsconfig.json' with { type: 'json' };
 
 export default defineConfig({
   entry: [
@@ -13,7 +13,8 @@ export default defineConfig({
     'src/use-cases/shared/index.ts',
     'src/use-cases/value-objects/index.ts',
   ],
-  bundle: false,
+  bundle: true,
+  splitting: true,
   dts: true,
   sourcemap: true,
   clean: true,

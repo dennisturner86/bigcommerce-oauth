@@ -35,7 +35,7 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./gateways/bigcommerce": {
+    "./gateways/BigCommerce": {
       "types": "./dist/gateways/BigCommerce/index.d.ts",
       "import": "./dist/gateways/BigCommerce/index.js",
       "require": "./dist/gateways/BigCommerce/index.cjs"

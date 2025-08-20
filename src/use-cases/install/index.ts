@@ -1,8 +1,8 @@
-export * from './InstallApp';
+export * from './InstallApp.js';
 
-export type * from './contracts/InstallAppUseCase';
-export type * from './contracts/OAuthClient';
+export type * from './contracts/InstallAppUseCase.js';
+export type * from './contracts/OAuthClient.js';
 
-export * from './decorators/InstallAppDecorator';
+export * from './decorators/InstallAppDecorator.js';
 
-export type * from './dto/InstallAppInput';
+export type * from './dto/InstallAppInput.js';

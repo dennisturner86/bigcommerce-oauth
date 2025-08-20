@@ -1,7 +1,7 @@
-import { UseCaseDecorator } from '@/use-cases/shared/decorators/UseCaseDecorator';
-import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims';
-import type { UninstallAppUseCase } from '@/use-cases/uninstall/contracts/UninstallAppUseCase';
-import type { UninstallAppInput } from '@/use-cases/uninstall/dto/UninstallAppInput';
+import { UseCaseDecorator } from '@/use-cases/shared/decorators/UseCaseDecorator.js';
+import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims.js';
+import type { UninstallAppUseCase } from '@/use-cases/uninstall/contracts/UninstallAppUseCase.js';
+import type { UninstallAppInput } from '@/use-cases/uninstall/dto/UninstallAppInput.js';
 
 /**
  * Base class for **Uninstall**-flow decorators.

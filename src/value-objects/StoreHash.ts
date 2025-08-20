@@ -1,4 +1,4 @@
-import { InvalidStoreContextError } from './errors/InvalidStoreContextError';
+import { InvalidStoreContextError } from './errors/InvalidStoreContextError.js';
 
 /**
  * Represent a validated BigCommerce store hash as a value object.

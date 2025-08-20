@@ -1,4 +1,4 @@
-import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims';
+import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims.js';
 
 /**
  * Abstraction over JWT verification.

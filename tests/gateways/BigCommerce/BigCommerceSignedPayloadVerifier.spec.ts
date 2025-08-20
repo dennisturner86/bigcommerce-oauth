@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, afterEach } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { BigCommerceSignedPayloadVerifier } from '@/gateways/BigCommerce/BigCommerceSignedPayloadVerifier.js';
 import { InvalidJwtSignatureError } from '@/gateways/BigCommerce/errors/InvalidJwtSignatureError.js';
@@ -79,7 +79,7 @@ describe('BigCommerceSignedPayloadVerifier', () => {
     vi.setSystemTime(new Date(nowSeconds * 1000));
 
     const claims: SignedPayloadClaims = {
-      iss: 'bigcommerce',
+      iss: 'bc',
       iat: nowSeconds,
       nbf: nowSeconds,
       exp: nowSeconds + 60,
@@ -98,7 +98,7 @@ describe('BigCommerceSignedPayloadVerifier', () => {
     vi.setSystemTime(new Date(nowSeconds * 1000));
 
     const claims: SignedPayloadClaims = {
-      iss: 'bigcommerce',
+      iss: 'bc',
       iat: nowSeconds - 120,
       nbf: nowSeconds - 60,
       exp: nowSeconds, // expires exactly at "now" → invalid (now >= exp)
@@ -116,7 +116,7 @@ describe('BigCommerceSignedPayloadVerifier', () => {
     vi.setSystemTime(new Date(nowSeconds * 1000));
 
     const claims: SignedPayloadClaims = {
-      iss: 'bigcommerce',
+      iss: 'bc',
       iat: nowSeconds - 5,
       nbf: nowSeconds + 10, // not valid yet
       exp: nowSeconds + 1000,

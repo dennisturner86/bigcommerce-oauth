@@ -2,6 +2,7 @@ import type { InstallAppUseCase } from '@/use-cases/install/contracts/InstallApp
 import type { InstallAppInput } from '@/use-cases/install/dto/InstallAppInput.js';
 import { UseCaseDecorator } from '@/use-cases/shared/decorators/UseCaseDecorator.js';
 import type { AuthSession } from '@/use-cases/shared/dto/AuthSession.js';
+import type { InstallAppContext } from '../InstallAppContext.js';
 
 /**
  * Base class for **Install**-flow decorators.
@@ -15,30 +16,7 @@ import type { AuthSession } from '@/use-cases/shared/dto/AuthSession.js';
  *
  * This class delegates to the wrapped implementation by default; override
  * `execute` to add pre-/post-logic.
- *
- * @example
- * ```ts
- * export class UpsertStoreFromSession extends InstallAppDecorator {
- *   constructor(
- *     inner: InstallAppUseCase,
- *     private readonly stores: StoreRepository
- *   ) { super(inner); }
- *
- *   async execute(input: InstallAppInput): Promise<AuthSession> {
- *     const session = await super.execute(input); // exchange code → session
- *     const store = Store.fromAuthSession(session);
- *     await this.stores.upsertStore(store);       // idempotent UPSERT
- *     return session;                             // pass-through
- *   }
- * }
- * ```
  */
 export abstract class InstallAppDecorator
-  extends UseCaseDecorator<InstallAppInput, AuthSession>
-  implements InstallAppUseCase
-{
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  override execute(input: InstallAppInput): Promise<AuthSession> {
-    throw new Error('Method not implemented.');
-  }
-}
+  extends UseCaseDecorator<InstallAppInput, AuthSession, InstallAppContext>
+  implements InstallAppUseCase {}

@@ -1,5 +1,7 @@
 import type { RemoveUserInput } from '@/use-cases/remove-user/dto/RemoveUserInput.js';
+import type { UseCase } from '@/use-cases/shared/contracts/UseCase.js';
 import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims.js';
+import type { RemoveUserContext } from '../RemoveUserContext.js';
 
 /**
  * Use case contract for handling the BigCommerce **remove user** callback.
@@ -16,7 +18,8 @@ import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadCl
  *
  * @see https://developer.bigcommerce.com/docs/integrations/apps/guide/callbacks
  */
-export interface RemoveUserUseCase {
+export interface RemoveUserUseCase<TContext extends RemoveUserContext = RemoveUserContext>
+  extends UseCase<RemoveUserInput, SignedPayloadClaims, TContext> {
   /**
    * Verify and decode the remove-user callback’s `signed_payload_jwt`.
    *
@@ -27,5 +30,5 @@ export interface RemoveUserUseCase {
    * @throws {InvalidJwtSignatureError} If the HMAC signature check fails.
    * @throws {JwtLifetimeError} If the token is expired or not yet valid (`nbf…exp`).
    */
-  execute(input: RemoveUserInput): Promise<SignedPayloadClaims>;
+  execute(input: RemoveUserInput, context: TContext): Promise<SignedPayloadClaims>;
 }

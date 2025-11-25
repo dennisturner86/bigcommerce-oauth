@@ -1,5 +1,7 @@
 import type { LoadAppInput } from '@/use-cases/load/dto/LoadAppInput.js';
+import type { UseCase } from '@/use-cases/shared/contracts/UseCase.js';
 import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims.js';
+import type { LoadAppContext } from '../LoadAppContext.js';
 
 /**
  * Use case contract for handling the BigCommerce **load** callback.
@@ -15,7 +17,8 @@ import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadCl
  *
  * @see https://developer.bigcommerce.com/docs/integrations/apps/guide/callbacks
  */
-export interface LoadAppUseCase {
+export interface LoadAppUseCase<TContext extends LoadAppContext = LoadAppContext>
+  extends UseCase<LoadAppInput, SignedPayloadClaims, TContext> {
   /**
    * Verify and decode the load callback’s `signed_payload_jwt`.
    *
@@ -26,5 +29,5 @@ export interface LoadAppUseCase {
    * @throws {InvalidJwtSignatureError} If the HMAC signature check fails.
    * @throws {JwtLifetimeError} If the token is expired or not yet valid (`nbf…exp`).
    */
-  execute(input: LoadAppInput): Promise<SignedPayloadClaims>;
+  execute(input: LoadAppInput, context: TContext): Promise<SignedPayloadClaims>;
 }

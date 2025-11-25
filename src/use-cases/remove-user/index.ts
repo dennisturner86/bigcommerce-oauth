@@ -1,4 +1,5 @@
 export * from './RemoveUser.js';
+export type * from './RemoveUserContext.js';
 
 export type * from './contracts/RemoveUserUseCase.js';
 

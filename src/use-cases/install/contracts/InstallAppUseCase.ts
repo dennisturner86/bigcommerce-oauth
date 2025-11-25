@@ -1,5 +1,7 @@
 import type { InstallAppInput } from '@/use-cases/install/dto/InstallAppInput.js';
+import type { UseCase } from '@/use-cases/shared/contracts/UseCase.js';
 import type { AuthSession } from '@/use-cases/shared/dto/AuthSession.js';
+import type { InstallAppContext } from '../InstallAppContext.js';
 
 /**
  * Use case contract for handling the BigCommerce **install (OAuth callback)** flow.
@@ -15,7 +17,8 @@ import type { AuthSession } from '@/use-cases/shared/dto/AuthSession.js';
  *
  * @see https://developer.bigcommerce.com/docs/integrations/apps/guide/auth#access-token-response
  */
-export interface InstallAppUseCase {
+export interface InstallAppUseCase<TContext extends InstallAppContext = InstallAppContext>
+  extends UseCase<InstallAppInput, AuthSession, TContext> {
   /**
    * Exchange the OAuth code for an {@link AuthSession}.
    *
@@ -25,5 +28,5 @@ export interface InstallAppUseCase {
    *
    * @throws {Error} If the provider returns a non-2xx response or the network fails.
    */
-  execute(input: InstallAppInput): Promise<AuthSession>;
+  execute(input: InstallAppInput, context: TContext): Promise<AuthSession>;
 }

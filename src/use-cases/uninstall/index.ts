@@ -1,4 +1,5 @@
 export * from './UninstallApp.js';
+export type * from './UninstallContext.js';
 
 export type * from './contracts/UninstallAppUseCase.js';
 

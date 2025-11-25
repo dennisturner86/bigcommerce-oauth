@@ -1,28 +1,20 @@
+import type { UseCase } from '../contracts/UseCase.js';
+
 /**
  * Generic base class for implementing the **Decorator** pattern around a use case.
  *
  * @typeParam TIn  Input DTO type accepted by the `execute` method.
  * @typeParam TOut Output type (or Promise value) returned by the `execute` method.
+ * @typeParam TContext Optional, per-execution context object used to pass
  *
  * Extend this class when you need to add cross-cutting behavior (logging,
  * persistence, notifications, etc.) around a core use case implementation.
- *
- * Example:
- * ```ts
- * class DeactivateStore extends UseCaseDecorator<UninstallAppInput, SignedPayloadClaims> {
- *   async execute(input: UninstallAppInput): Promise<SignedPayloadClaims> {
- *     const claims = await super.execute(input);
- *     await this.storeRepo.deactivate(claims.storeHash);
- *     return claims;
- *   }
- * }
- * ```
  */
-export abstract class UseCaseDecorator<TIn, TOut> {
+export abstract class UseCaseDecorator<TIn, TOut, TContext = void> {
   /**
    * @param inner The wrapped use case instance to which calls will be delegated.
    */
-  protected constructor(protected readonly inner: { execute(input: TIn): Promise<TOut> }) {}
+  protected constructor(protected readonly inner: UseCase<TIn, TOut, TContext>) {}
 
   /**
    * Default implementation: simply forwards the call to the wrapped use case.
@@ -31,7 +23,7 @@ export abstract class UseCaseDecorator<TIn, TOut> {
    * @param input The input DTO passed to the wrapped use case.
    * @returns A promise resolving to the wrapped use case’s result.
    */
-  execute(input: TIn): Promise<TOut> {
-    return this.inner.execute(input);
+  execute(input: TIn, context: TContext): Promise<TOut> {
+    return this.inner.execute(input, context);
   }
 }

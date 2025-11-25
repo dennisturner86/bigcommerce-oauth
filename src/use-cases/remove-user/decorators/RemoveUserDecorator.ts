@@ -2,6 +2,7 @@ import type { RemoveUserUseCase } from '@/use-cases/remove-user/contracts/Remove
 import type { RemoveUserInput } from '@/use-cases/remove-user/dto/RemoveUserInput.js';
 import { UseCaseDecorator } from '@/use-cases/shared/decorators/UseCaseDecorator.js';
 import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims.js';
+import type { RemoveUserContext } from '../RemoveUserContext.js';
 
 /**
  * Base class for **Remove User**-flow decorators.
@@ -15,24 +16,7 @@ import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadCl
  *
  * This class delegates to the wrapped implementation by default; override
  * `execute` to add pre-/post-logic.
- *
- * @example
- * ```ts
- * export class RemoveUserFromStore extends RemoveUserDecorator {
- *   constructor(
- *     inner: RemoveUserUseCase,
- *     private readonly users: UserRepository
- *   ) { super(inner); }
- *
- *   async execute(input: RemoveUserInput): Promise<SignedPayloadClaims> {
- *     const claims = await super.execute(input); // verify & decode
- *     const storeHash = StoreHash.fromJWTSub(claims.sub);
- *     await this.users.removeUser(claims.user.id, storeHash);
- *     return claims;
- *   }
- * }
- * ```
  */
-export abstract class RemoveUserDecorator
-  extends UseCaseDecorator<RemoveUserInput, SignedPayloadClaims>
+export abstract class RemoveUserDecorator<TContext extends RemoveUserContext = RemoveUserContext>
+  extends UseCaseDecorator<RemoveUserInput, SignedPayloadClaims, TContext>
   implements RemoveUserUseCase {}

@@ -1,4 +1,5 @@
 export * from './LoadApp.js';
+export type * from './LoadAppContext.js';
 
 export type * from './contracts/LoadAppUseCase.js';
 

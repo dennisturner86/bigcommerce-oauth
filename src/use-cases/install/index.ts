@@ -1,4 +1,5 @@
 export * from './InstallApp.js';
+export type * from './InstallAppContext.js';
 
 export type * from './contracts/InstallAppUseCase.js';
 export type * from './contracts/OAuthClient.js';

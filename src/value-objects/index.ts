@@ -1,3 +1,3 @@
-export * from './StoreHash';
+export * from './StoreHash.js';
 
-export * from './errors/InvalidStoreContextError';
+export * from './errors/InvalidStoreContextError.js';

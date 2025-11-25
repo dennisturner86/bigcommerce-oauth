@@ -11,6 +11,7 @@
     "lint": "eslint . --ext .ts",
     "format": "prettier --write .",
     "test": "vitest run",
+    "coverage": "vitest run --coverage",
     "test:watch": "vitest",
     "prepublishOnly": "pnpm build"
   },
@@ -34,12 +35,7 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./entities": {
-      "types": "./dist/entities/index.d.ts",
-      "import": "./dist/entities/index.js",
-      "require": "./dist/entities/index.cjs"
-    },
-    "./gateways/bigcommerce": {
+    "./gateways/BigCommerce": {
       "types": "./dist/gateways/BigCommerce/index.d.ts",
       "import": "./dist/gateways/BigCommerce/index.js",
       "require": "./dist/gateways/BigCommerce/index.cjs"
@@ -95,6 +91,7 @@
     "tsx": "^4.20.4",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.39.1",
+    "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4"
   }
 }

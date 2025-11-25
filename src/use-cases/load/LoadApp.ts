@@ -1,7 +1,7 @@
-import type { SignedPayloadVerifier } from '@/use-cases/shared/contracts/SignedPayloadVerifier';
-import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims';
-import type { LoadAppUseCase } from './contracts/LoadAppUseCase';
-import type { LoadAppInput } from './dto/LoadAppInput';
+import type { SignedPayloadVerifier } from '@/use-cases/shared/contracts/SignedPayloadVerifier.js';
+import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims.js';
+import type { LoadAppUseCase } from './contracts/LoadAppUseCase.js';
+import type { LoadAppInput } from './dto/LoadAppInput.js';
 
 /**
  * **LoadApp** — base implementation of {@link LoadAppUseCase}.

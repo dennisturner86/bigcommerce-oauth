@@ -1,5 +1,5 @@
-import type { LoadAppInput } from '@/use-cases/load/dto/LoadAppInput';
-import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims';
+import type { LoadAppInput } from '@/use-cases/load/dto/LoadAppInput.js';
+import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims.js';
 
 /**
  * Use case contract for handling the BigCommerce **load** callback.

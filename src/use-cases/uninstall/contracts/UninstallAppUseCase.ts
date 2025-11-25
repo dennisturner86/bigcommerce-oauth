@@ -1,5 +1,5 @@
-import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims';
-import type { UninstallAppInput } from '@/use-cases/uninstall/dto/UninstallAppInput';
+import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims.js';
+import type { UninstallAppInput } from '@/use-cases/uninstall/dto/UninstallAppInput.js';
 
 /**
  * Use case contract for handling the BigCommerce **app uninstall** callback.

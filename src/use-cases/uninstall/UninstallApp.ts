@@ -1,7 +1,7 @@
-import type { SignedPayloadVerifier } from '@/use-cases/shared/contracts/SignedPayloadVerifier';
-import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims';
-import type { UninstallAppUseCase } from './contracts/UninstallAppUseCase';
-import type { UninstallAppInput } from './dto/UninstallAppInput';
+import type { SignedPayloadVerifier } from '@/use-cases/shared/contracts/SignedPayloadVerifier.js';
+import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims.js';
+import type { UninstallAppUseCase } from './contracts/UninstallAppUseCase.js';
+import type { UninstallAppInput } from './dto/UninstallAppInput.js';
 
 /**
  * **UninstallApp** — base implementation of {@link UninstallAppUseCase}.

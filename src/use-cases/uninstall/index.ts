@@ -1,7 +1,7 @@
-export * from './UninstallApp';
+export * from './UninstallApp.js';
 
-export type * from './contracts/UninstallAppUseCase';
+export type * from './contracts/UninstallAppUseCase.js';
 
-export * from './decorators/UninstallAppDecorator';
+export * from './decorators/UninstallAppDecorator.js';
 
-export type * from './dto/UninstallAppInput';
+export type * from './dto/UninstallAppInput.js';

@@ -1,7 +1,7 @@
-import type { InstallAppUseCase } from '@/use-cases/install/contracts/InstallAppUseCase';
-import type { InstallAppInput } from '@/use-cases/install/dto/InstallAppInput';
-import { UseCaseDecorator } from '@/use-cases/shared/decorators/UseCaseDecorator';
-import type { AuthSession } from '@/use-cases/shared/dto/AuthSession';
+import type { InstallAppUseCase } from '@/use-cases/install/contracts/InstallAppUseCase.js';
+import type { InstallAppInput } from '@/use-cases/install/dto/InstallAppInput.js';
+import { UseCaseDecorator } from '@/use-cases/shared/decorators/UseCaseDecorator.js';
+import type { AuthSession } from '@/use-cases/shared/dto/AuthSession.js';
 
 /**
  * Base class for **Install**-flow decorators.

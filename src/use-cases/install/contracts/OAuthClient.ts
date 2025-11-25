@@ -1,4 +1,4 @@
-import type { AuthSession } from '@/use-cases/shared/dto/AuthSession';
+import type { AuthSession } from '@/use-cases/shared/dto/AuthSession.js';
 
 /**
  * Abstraction over any OAuth client capable of exchanging an

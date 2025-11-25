@@ -1,7 +1,7 @@
-import type { RemoveUserUseCase } from '@/use-cases/remove-user/contracts/RemoveUserUseCase';
-import type { RemoveUserInput } from '@/use-cases/remove-user/dto/RemoveUserInput';
-import { UseCaseDecorator } from '@/use-cases/shared/decorators/UseCaseDecorator';
-import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims';
+import type { RemoveUserUseCase } from '@/use-cases/remove-user/contracts/RemoveUserUseCase.js';
+import type { RemoveUserInput } from '@/use-cases/remove-user/dto/RemoveUserInput.js';
+import { UseCaseDecorator } from '@/use-cases/shared/decorators/UseCaseDecorator.js';
+import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims.js';
 
 /**
  * Base class for **Remove User**-flow decorators.

@@ -1,6 +1,6 @@
 {
   "name": "bigcommerce-oauth",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Framework-agnostic OAuth utilities for BigCommerce apps",
   "main": "dist/index.cjs",
   "scripts": {

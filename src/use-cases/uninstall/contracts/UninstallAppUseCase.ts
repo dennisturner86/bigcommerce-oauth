@@ -1,7 +1,7 @@
 import type { UseCase } from '@/use-cases/shared/contracts/UseCase.js';
 import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims.js';
 import type { UninstallAppInput } from '@/use-cases/uninstall/dto/UninstallAppInput.js';
-import type { UninstallContext } from '../UninstallContext.js';
+import type { UninstallAppContext } from '../UninstallAppContext.js';
 
 /**
  * Use case contract for handling the BigCommerce **app uninstall** callback.
@@ -17,7 +17,7 @@ import type { UninstallContext } from '../UninstallContext.js';
  *
  * @see https://developer.bigcommerce.com/docs/integrations/apps/guide/callbacks
  */
-export interface UninstallAppUseCase<TContext extends UninstallContext = UninstallContext>
+export interface UninstallAppUseCase<TContext extends UninstallAppContext = UninstallAppContext>
   extends UseCase<UninstallAppInput, SignedPayloadClaims, TContext> {
   /**
    * Verify and decode the uninstall callback’s `signed_payload_jwt`.

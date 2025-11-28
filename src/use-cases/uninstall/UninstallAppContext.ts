@@ -5,4 +5,4 @@
  * - Intentionally empty
  * - Applications may extend this with their own fields
  */
-export type UninstallContext = Record<string, unknown>;
+export type UninstallAppContext = Record<string, unknown>;

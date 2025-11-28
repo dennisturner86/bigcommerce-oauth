@@ -2,7 +2,7 @@ import { UseCaseDecorator } from '@/use-cases/shared/decorators/UseCaseDecorator
 import type { SignedPayloadClaims } from '@/use-cases/shared/dto/SignedPayloadClaims.js';
 import type { UninstallAppUseCase } from '@/use-cases/uninstall/contracts/UninstallAppUseCase.js';
 import type { UninstallAppInput } from '@/use-cases/uninstall/dto/UninstallAppInput.js';
-import type { UninstallContext } from '../UninstallContext.js';
+import type { UninstallAppContext } from '../UninstallAppContext.js';
 
 /**
  * Base class for **Uninstall**-flow decorators.
@@ -17,6 +17,8 @@ import type { UninstallContext } from '../UninstallContext.js';
  * This class delegates to the wrapped implementation by default; override
  * `execute` in your subclass to add pre-/post-logic.
  */
-export abstract class UninstallAppDecorator<TContext extends UninstallContext = UninstallContext>
+export abstract class UninstallAppDecorator<
+    TContext extends UninstallAppContext = UninstallAppContext,
+  >
   extends UseCaseDecorator<UninstallAppInput, SignedPayloadClaims, TContext>
   implements UninstallAppUseCase {}

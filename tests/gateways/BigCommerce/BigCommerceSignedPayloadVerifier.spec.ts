@@ -10,10 +10,6 @@ import { createHmac, randomUUID } from 'crypto';
 
 const header = { alg: 'HS256', typ: 'JWT' } as const;
 
-function b64url(input: string): string {
-  return Buffer.from(input, 'utf8').toString('base64url');
-}
-
 function encodeHeader(): string {
   return Buffer.from(JSON.stringify(header), 'utf8').toString('base64url');
 }
@@ -70,7 +66,7 @@ describe('BigCommerceSignedPayloadVerifier', () => {
   });
 
   it('throws MalformedJwtError when token does not have exactly 3 parts', () => {
-    const badToken = 'only.two.parts';
+    const badToken = 'onlyTwo.parts';
     expect(() => verifier.verify(badToken)).toThrow(MalformedJwtError);
   });
 
@@ -85,6 +81,9 @@ describe('BigCommerceSignedPayloadVerifier', () => {
       exp: nowSeconds + 60,
       aud: 'my-app',
       sub: 'stores/abc123',
+      user: { id: 101, email: 'installer@store.com', locale: 'en-US' },
+      owner: { id: 202, email: 'owner@store.com' },
+      jti: randomUUID(),
     };
 
     // Sign with a different secret to force mismatch
@@ -104,6 +103,9 @@ describe('BigCommerceSignedPayloadVerifier', () => {
       exp: nowSeconds, // expires exactly at "now" → invalid (now >= exp)
       aud: 'my-app',
       sub: 'stores/abc123',
+      user: { id: 101, email: 'installer@store.com', locale: 'en-US' },
+      owner: { id: 202, email: 'owner@store.com' },
+      jti: randomUUID(),
     };
 
     const token = buildSignedJwt(claims, secret);
@@ -122,6 +124,9 @@ describe('BigCommerceSignedPayloadVerifier', () => {
       exp: nowSeconds + 1000,
       aud: 'my-app',
       sub: 'stores/abc123',
+      user: { id: 101, email: 'installer@store.com', locale: 'en-US' },
+      owner: { id: 202, email: 'owner@store.com' },
+      jti: randomUUID(),
     };
 
     const token = buildSignedJwt(claims, secret);

@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { BigCommerceOAuthClient } from '@/gateways/BigCommerce/BigCommerceOAuthClient.js';
 import { BigCommerceTokenExchangeError } from '@/gateways/BigCommerce/errors/BigCommerceTokenExchangeError.js';
@@ -35,11 +35,11 @@ describe('BigCommerceOAuthClient', () => {
     expect(url).toBe(TOKEN_URL);
 
     // method + headers
-    expect(init?.method).toBe('POST');
-    expect(init?.headers).toEqual({ 'Content-Type': 'application/json' });
+    expect(init.method).toBe('POST');
+    expect(init.headers).toEqual({ 'Content-Type': 'application/json' });
 
     // body contents
-    const body = JSON.parse(init!.body as string);
+    const body = JSON.parse(init.body as string) as Record<string, unknown>;
     expect(body).toEqual({
       client_id: clientId,
       client_secret: clientSecret,
@@ -64,7 +64,8 @@ describe('BigCommerceOAuthClient', () => {
     fetchSpy = mockFetchError(401, 'Unauthorized');
 
     const client = new BigCommerceOAuthClient(clientId, clientSecret);
-    const err = await client.exchange(code, context, scope, redirectUri).catch((e) => e);
+
+    const err = await client.exchange(code, context, scope, redirectUri).catch((e: unknown) => e);
 
     expect(err).toBeInstanceOf(BigCommerceTokenExchangeError);
     expect(err).toMatchObject({ status: 401, statusText: 'Unauthorized' });

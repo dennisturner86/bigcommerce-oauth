@@ -10,4 +10,4 @@ export * from './use-cases/remove-user/index.js';
 
 export * from './use-cases/shared/index.js';
 
-export type * from './value-objects/index.js';
+export * from './value-objects/index.js';

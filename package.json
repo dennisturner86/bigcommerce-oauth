@@ -1,7 +1,11 @@
 {
   "name": "bigcommerce-oauth",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Framework-agnostic OAuth utilities for BigCommerce apps",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dennisturner86/bigcommerce-oauth"
+  },
   "main": "dist/index.cjs",
   "scripts": {
     "build": "tsup",

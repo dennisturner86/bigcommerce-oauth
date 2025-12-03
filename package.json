@@ -1,7 +1,7 @@
 {
   "name": "bigcommerce-oauth",
-  "version": "1.0.1",
-  "description": "Framework-agnostic OAuth utilities for BigCommerce apps",
+  "version": "1.0.2",
+  "description": "Framework-agnostic BigCommerce OAuth + callback helpers for Node/TypeScript. Clean Architecture, decorators, strongly typed, minimal boilerplate.",
   "repository": {
     "type": "git",
     "url": "https://github.com/dennisturner86/bigcommerce-oauth"
@@ -19,8 +19,25 @@
     "test:watch": "vitest",
     "prepublishOnly": "pnpm build"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "bigcommerce",
+    "oauth",
+    "oauth2",
+    "signed-payload",
+    "jwt",
+    "clean-architecture",
+    "decorator-pattern",
+    "ecommerce",
+    "typescript",
+    "serverless",
+    "node",
+    "bigcommerce-app",
+    "bigcommerce-integration"
+  ],
+  "author": {
+    "name": "Dennis Turner",
+    "url": "https://github.com/dennisturner86"
+  },
   "license": "MIT",
   "packageManager": "pnpm@10.13.1",
   "type": "module",

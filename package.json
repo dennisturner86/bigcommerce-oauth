@@ -90,9 +90,9 @@
       "require": "./dist/use-cases/shared/index.cjs"
     },
     "./value-objects": {
-      "types": "./dist/use-cases/value-objects/index.d.ts",
-      "import": "./dist/use-cases/value-objects/index.js",
-      "require": "./dist/use-cases/value-objects/index.cjs"
+      "types": "./dist/value-objects/index.d.ts",
+      "import": "./dist/value-objects/index.js",
+      "require": "./dist/value-objects/index.cjs"
     },
     "./package.json": "./package.json"
   },

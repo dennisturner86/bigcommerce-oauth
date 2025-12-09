@@ -11,7 +11,7 @@ export default defineConfig({
     'src/use-cases/uninstall/index.ts',
     'src/use-cases/remove-user/index.ts',
     'src/use-cases/shared/index.ts',
-    'src/use-cases/value-objects/index.ts',
+    'src/value-objects/index.ts',
   ],
   bundle: true,
   splitting: true,

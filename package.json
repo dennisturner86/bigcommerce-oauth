@@ -1,6 +1,6 @@
 {
   "name": "bigcommerce-oauth",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Framework-agnostic BigCommerce OAuth + callback helpers for Node/TypeScript. Clean Architecture, decorators, strongly typed, minimal boilerplate.",
   "repository": {
     "type": "git",
